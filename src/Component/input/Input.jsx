@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Result from '../result/Result.jsx';
 import './Input.css';
+import loupe from '../images/loupe.png';
 
 class Input extends React.Component {
 
@@ -43,6 +44,7 @@ class Input extends React.Component {
                         key={i} name={e.fields.name.substring(8, e.fields.name.length)}
                         availableStands={e.fields.available_bike_stands}
                         availableBikes={e.fields.available_bikes}
+                        address={e.fields.address}
                     />);
             }
         });
@@ -55,10 +57,11 @@ class Input extends React.Component {
         return (
             <div className="containerInput">
 
-                <div>
-                    <input type="text" value={this.state.query} onChange={this.handleChange} placeholder="saisissez un nom" onKeyPress={this.handleKeyPress} />
+                <div className="myInput">
+                    <input type="text" value={this.state.query} onChange={this.handleChange} placeholder="saisissez votre recherche" onKeyPress={this.handleKeyPress} />
+                    <img className="loupe" src={loupe}/>
                 </div>
-                <div>
+                <div className="list">
                     {this.state.showList ? result : null}
                 </div>
             </div>
