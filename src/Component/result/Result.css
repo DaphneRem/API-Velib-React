@@ -1,0 +1,20 @@
+.Result {
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    margin : 20px;
+}
+h1 {
+    font-size: 24px;
+    width: 100%;
+}
+.placesDisponibles {
+    color : green;
+}
+.velosDisponibles {
+    color : white;
+}
+.border {
+    width: 100%;
+    border-bottom: 1px solid white;
+}

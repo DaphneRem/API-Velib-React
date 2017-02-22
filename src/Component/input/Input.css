@@ -1,0 +1,24 @@
+.containerInput {
+    max-height: 100%;
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+
+}
+.myInput {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    border : 0;
+    height: 50px;
+    width: 100%;
+    font-size: 24px;
+}
