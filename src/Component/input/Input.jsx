@@ -12,7 +12,7 @@ class Input extends React.Component {
             showList : false,
             data : []
     }
-    this.handleChange = this.handleChange.bind(this); // On initie les this de chaques fonctions pour qu'il corresponde au this à l'intérieur de chaque fonction
+    this.handleChange = this.handleChange.bind(this); // On initie les this de chaques fonctions pour qu'ils correspondent au this à l'intérieur de chaque fonction
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.renderResult = this.renderResult.bind(this);
 }
@@ -39,7 +39,11 @@ class Input extends React.Component {
     renderResult() {
         return this.state.data.map((e, i) => {
             if (e.fields.name.toLowerCase().includes(this.state.query.toLowerCase())) {
-            return (<Result key={i} name={e.fields.name.substring(8, e.fields.name.length)} availableStands={e.fields.available_bike_stands} availableBikes={e.fields.available_bikes} />);
+            return (<Result
+                        key={i} name={e.fields.name.substring(8, e.fields.name.length)}
+                        availableStands={e.fields.available_bike_stands}
+                        availableBikes={e.fields.available_bikes}
+                    />);
             }
         });
     }
@@ -49,10 +53,14 @@ class Input extends React.Component {
         let result = this.renderResult();
 
         return (
-            <div>
+            <div className="containerInput">
 
-                <input type="text" value={this.state.query} onChange={this.handleChange} placeholder="saisissez un nom" onKeyPress={this.handleKeyPress} />
-                {this.state.showList ? result : null}
+                <div>
+                    <input type="text" value={this.state.query} onChange={this.handleChange} placeholder="saisissez un nom" onKeyPress={this.handleKeyPress} />
+                </div>
+                <div>
+                    {this.state.showList ? result : null}
+                </div>
             </div>
 
         );
